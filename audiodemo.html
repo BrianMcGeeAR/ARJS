@@ -9,14 +9,14 @@
         <audi id="sound" src="audio.mp3" preload="auto"></audio>
         </a-asset>
       <a-marker preset="hiro">
-        <a-box position='0 0.5 0' material='color: black;" soundhandler>
+        <a-box position='0 0.5 0' material='color: black;' soundhandler>
         </a-box>
         </a-marker>
         <a-entity sound="src: #sound" autoplay="false"></a-entity>
       <a-entity camera></a-entity>
     </a-scene>
     <script>
-      AFRAME.egisterComponent('soundhandler',{
+      AFRAME.registerComponent('soundhandler',{
           tick: function() {
               var entity= document.querySelector('[sound]');
             if (document.querySelector('a-marker').object3d.visible == true){
