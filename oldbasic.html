@@ -4,17 +4,35 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
+    <script>
+      AFRAME.registerComponent('soundhandler',{
+          tick: function() {
+              var entity= document.querySelector('[sound]');
+            if (document.querySelector('a-marker').object3d.visible == true){
+                entity.components.sound.playSound();
+            } else {
+                entity.components.sound.pauseSound();
+            }
+          }
+      });
+    </script>  
         <a-scene embedded arjs>
+        <a-assets>
+        <audio id="sound" src="../assets/audio.mp3" preload="auto"></audio>
+        </a-asset>
         <a-marker preset="hiro">
-            <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+            <a-box position='0 0.5 0' material='opacity: 0.5;' soundhandler></a-box>
           <!--  <a-entity
             position="0 0 0"
             rotation="0 0 0"
             scale="0.05 0.05 0.05"
             gltf-model="../image-tracking/nft/trex/scene.gltf"
             ></a-entity> -->
-        </a-marker>
+        </a-marker> 
+        <a-entity sound="src: #sound" autoplay="false"></a-entity>
         <a-entity camera></a-entity>
         </a-scene>
     </body>
 </html>
+ 
+   
