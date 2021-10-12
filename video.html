@@ -131,15 +131,25 @@ function initialize()
 	mesh1.rotation.x = -Math.PI/2;
 	
 	markerRoot1.add( mesh1 );
+	video.pause();
 }
 
 
 function update()
 {
+	let video = document.getElementById( 'video' );
+	
 	// update artoolkit on every frame
-	if ( arToolkitSource.ready !== false )
-		
+	if ( arToolkitSource.ready !== false ){
+		if ( video.paused){
+			video.play();
+		}
 		arToolkitContext.update( arToolkitSource.domElement );
+		} else {
+			video.pause();
+		}
+	
+			
 }
 
 
