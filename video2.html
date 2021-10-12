@@ -27,9 +27,9 @@
 <script>
 
 var scene
-var AR-Object01
-var AR-Object02
-var AR-VideoScreen
+var ARObject01
+var ARObject02
+var ARVideoScreen
 
 AFRAME.registerComponent('markerhandler', {
 
@@ -46,11 +46,11 @@ AFRAME.registerComponent('markerhandler', {
       //alert("MARKER IS PRESENT")
 
   		scene = document.querySelector('#a-scene');
-  	  AR-Object01 = document.querySelector('#Object01');
+  	  ARObject01 = document.querySelector('#Object01');
   <!--  	AR-Object02 = document.querySelector('#Object02'); -->
-      AR-VideoScreen =  document.querySelector('#videoScreen');
+      ARVideoScreen =  document.querySelector('#videoScreen');
 
-      AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR") });
+      ARObject01.addEventListener('click', function () { console.log("object01 clickable in AR") });
  <!--     AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR") }); -->
       videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
       playing = true;
