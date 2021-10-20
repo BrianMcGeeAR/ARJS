@@ -16,6 +16,50 @@
  
     
     
+    AFRAME.registerComponent('vidhandler6', {  init: function () { 
+    // Set up initial state and variables. 
+        
+    this.toggle = false; 
+    this.vid = document.querySelector("#vid6"); 
+    this.vid.pause(); }, 
+    
+    tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
+    function refrespage() { location.reload(); } 
+
+  AFRAME.registerComponent('vidhandler7', {  init: function () { 
+    // Set up initial state and variables. 
+        
+    this.toggle = false; 
+    this.vid = document.querySelector("#vid7"); 
+    this.vid.pause(); }, 
+    
+    tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
+ AFRAME.registerComponent('vidhandler3', {  init: function () { 
+    // Set up initial state and variables. 
+        
+    this.toggle = false; 
+    this.vid = document.querySelector("#vid3"); 
+    this.vid.pause(); }, 
+    
+    tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
+ AFRAME.registerComponent('vidhandler4', {  init: function () { 
+    // Set up initial state and variables. 
+        
+    this.toggle = false; 
+    this.vid = document.querySelector("#vid4"); 
+    this.vid.pause(); }, 
+    
+    tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
+
+ AFRAME.registerComponent('vidhandler5', {  init: function () { 
+    // Set up initial state and variables. 
+        
+    this.toggle = false; 
+    this.vid = document.querySelector("#vid5"); 
+    this.vid.pause(); }, 
+    
+    tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
+    
     AFRAME.registerComponent('vidhandler1', {  init: function () { 
     // Set up initial state and variables. 
         
@@ -24,9 +68,8 @@
     this.vid.pause(); }, 
     
     tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
-    function refrespage() { location.reload(); } 
-
-  AFRAME.registerComponent('vidhandler2', {  init: function () { 
+    
+AFRAME.registerComponent('vidhandler2', {  init: function () { 
     // Set up initial state and variables. 
         
     this.toggle = false; 
@@ -34,28 +77,64 @@
     this.vid.pause(); }, 
     
     tick:function(){ if(this.el.object3D.visible == true){ if(!this.toggle){ this.toggle = true; this.vid.play(); } }else{ this.toggle = false; this.vid.pause(); } } }); 
- 
+    
+
 </script>
 <body style='margin : 0px; overflow: hidden;'>
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; maxDetectionRate: 30; canvasWidth: 250; canvasHeight: 250' >
 
      <a-assets >
-        <video preload="auto"  id="vid1" loop="true" crossorigin  webkit-playsinline playsinline controls>
+        <video preload="auto"  id="vid6" loop="true" crossorigin  webkit-playsinline playsinline controls>
             <source src="assets/audio.mp3" type='audio/mp3'> 
            <h3>Error : Your browser does not support.</h3>
         </video>
        
-       <video preload="auto"  id="vid2" loop="true" crossorigin  webkit-playsinline playsinline controls>
+        <video preload="auto"  id="vid3" loop="true" crossorigin  webkit-playsinline playsinline controls>
+            <source src="assets/03 Picante.mp3" type='audio/mp3'> 
+           <h3>Error : Your browser does not support.</h3>
+        </video>
+        <video preload="auto"  id="vid4" loop="true" crossorigin  webkit-playsinline playsinline controls>
+            <source src="assets/04 Red Hot.mp3" type='audio/mp3'> 
+           <h3>Error : Your browser does not support.</h3>
+        </video>
+        <video preload="auto"  id="vid5" loop="true" crossorigin  webkit-playsinline playsinline controls>
+            <source src="assets/05 Yantra.mp3" type='audio/mp3'> 
+           <h3>Error : Your browser does not support.</h3>
+        </video>
+        <video preload="auto"  id="vid1" loop="true" crossorigin  webkit-playsinline playsinline controls>
+            <source src="assets/01 Classical Gas.mp3" type='audio/mp3'> 
+           <h3>Error : Your browser does not support.</h3>
+        </video>
+          <video preload="auto"  id="vid2" loop="true" crossorigin  webkit-playsinline playsinline controls>
+            <source src="assets/02 I Feel Love.mp3" type='audio/mp3'> 
+           <h3>Error : Your browser does not support.</h3>
+        </video>
+       <video preload="auto"  id="vid7" loop="true" crossorigin  webkit-playsinline playsinline controls>
             <source src="assets/audio2.mp3" type='audio/mp3'> 
            <h3>Error : Your browser does not support.</h3>
         </video>
      </a-assets>
    
-         <a-marker type="barcode" value ='6' vidhandler1>
+         <a-marker type="barcode" value ='6' vidhandler6>
+       <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid6'></a-plane>
+     </a-marker>
+    <a-marker type="barcode" value ='3' vidhandler3>
+       <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid3'></a-plane>
+     </a-marker>
+    <a-marker type="barcode" value ='4' vidhandler4>
+       <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid4'></a-plane>
+     </a-marker>
+    <a-marker type="barcode" value ='5' vidhandler5>
+       <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid5'></a-plane>
+     </a-marker>
+    <a-marker type="barcode" value ='1' vidhandler1>
        <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid1'></a-plane>
      </a-marker>
-  <a-marker  type="barcode" value ='7' vidhandler2>
-        <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid2'></a-plane>
+    <a-marker type="barcode" value ='2' vidhandler2>
+       <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid2'></a-plane>
+     </a-marker>
+  <a-marker  type="barcode" value ='7' vidhandler7>
+        <a-plane  position='0 0 0' scale="1 1 1" rotation="-90 0 0" material='transparent:true;alphaTest:0;src:#vid7'></a-plane>
      </a-marker>
      <a-entity camera></a-entity>
   </a-scene>
